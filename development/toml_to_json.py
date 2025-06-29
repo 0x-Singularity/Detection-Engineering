@@ -6,7 +6,7 @@ import tomllib
 load_dotenv()
 
 url = "https://c1f15cbeea394929ad06f29bf0b1d3ac.us-east4.gcp.elastic-cloud.com/api/detection_engine/rules"
-api_key = os.getenv("API_KEY")
+api_key = os.environ['ELASTIC_KEY']
 headers = {
     'Content-Type': 'application/json;chatset=UTF-8',
     'kbn-xsrf': 'true',
@@ -15,7 +15,7 @@ headers = {
 
 data = ""
 
-for root, dirs, files in os.walk("custom-detection-rules/"):
+for root, dirs, files in os.walk("detections/"):
     for file in files:
         data = "{\n"
         if file.endswith(".toml"):

@@ -8,6 +8,7 @@ name = "Web Scanner Activity - Nmap and Nikto"
 risk_score = 25
 severity = "low"
 type = "query"
+rule_id = "00000000-0000-0000-0000-000000000010"
 
 query = '''
 event.dataset : zeek.http and user_agent.original *Nikto* or user_agent.original *Nmap*
