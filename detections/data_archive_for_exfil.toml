@@ -12,6 +12,7 @@ rule_id = "00000000-0000-0000-0000-000000000002"
 query = '''
 event.dataset : "endpoint.events.file" and event.action : (creation or overwrite) and process.name : "powershell.exe" and file.path : *Windows\\\\Temp\\\\* and file.name : *.zip
 '''
+#comment
 
 [[rule.threat]]
 framework = "MITRE ATT&CK"
