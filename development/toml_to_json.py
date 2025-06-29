@@ -1,9 +1,7 @@
 import requests
-from dotenv import load_dotenv
 import os
 import tomllib
 
-load_dotenv()
 
 url = "https://c1f15cbeea394929ad06f29bf0b1d3ac.us-east4.gcp.elastic-cloud.com/api/detection_engine/rules"
 api_key = os.environ['ELASTIC_KEY']
