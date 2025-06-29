@@ -1,0 +1,15 @@
+name: All detections to Elastic
+
+on:
+  workflow_dispatch:
+
+jobs:
+  elastic-detections-all:
+    runs-on: ubuntu-latest
+    env:
+      ELASTIC_KEY: ${{ secrets.ELASTIC_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: python development/toml_to_json.py
