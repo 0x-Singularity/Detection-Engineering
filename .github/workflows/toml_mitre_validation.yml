@@ -10,6 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: |
-          python development/validation.py
-          python development/mitre.py
+      - run: python development/validation.py
+      - run: python development/mitre.py
