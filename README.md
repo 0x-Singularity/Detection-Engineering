@@ -75,11 +75,60 @@ See the diagram above for full flow.
 
 ---
 
-## Outputs
+## Tracking Metrics
 
-- CSV detection metrics
-- MITRE Navigator layers
-- Validated TOML → JSON conversion for Elastic
+![Tracking Metrics](/assets/tracking_metrics.png)
+
+This repository includes automated tooling to extract and visualize detection rule coverage and metadata from TOML-based alert definitions.
+
+Three core outputs are generated from the `detections/` directory:
+
+### CSV Export
+
+**Script:** `toml_to_csv.py`  
+Generates a CSV table of all detection alerts with the following fields:
+
+- Name
+- Date Created
+- Author(s)
+- Risk Score
+- Severity
+- MITRE Tactic, Technique, and Subtechnique(s)
+
+**Output:** `metrics/detectiondata.csv`
+
+Useful for audits, tracking changes over time, or importing into BI dashboards.
+
+---
+
+### Markdown Report
+
+**Script:** `toml_to_md.py`  
+Builds a rolling detection engineering changelog/report for the last 3 months.
+
+**Output:** `metrics/recentdetections.md`
+
+The report includes:
+
+- Month-over-month summary of new alerts
+- Tabular view of each alert's metadata
+
+This can be used directly in GitHub Wikis or emailed to detection engineering stakeholders.
+
+---
+
+### MITRE Navigator JSON
+
+**Script:** `toml_to_navigator.py`  
+Creates a **MITRE ATT&CK Navigator layer** file that visualizes alert coverage across techniques.
+
+**Output:** `metrics/navigator.json`
+
+Upload to: [https://mitre-attack.github.io/attack-navigator/](https://mitre-attack.github.io/attack-navigator/)
+
+> Each detection increases the "score" of a technique/subtechnique to reflect alert density.
+
+---
 
 ---
 
