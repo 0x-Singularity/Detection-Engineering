@@ -1,33 +1,36 @@
-# Detection Engineering
+# Detection Engineering Home Lab
 
-![GitHub Actions Flow](./assets/github_actions_flow.png)
-
-> A modern, GitHub Actions–driven framework for managing and automating detection rules using TOML, with native integration into Elastic and automated validation pipelines.
+> A personal detection engineering lab and validation framework built with GitHub Actions, designed to help develop and test detection logic in a realistic environment.
 
 ---
 
 ## Overview
 
-Detection Engineering is an automation-first approach to maintaining detection logic. It is designed for teams or individuals who want to:
+This project is a home lab I built to sharpen my detection engineering skills. It focuses on building, validating, and managing detection rules in a structured way, while integrating automation through GitHub Actions. While it's not intended as a plug-and-play solution for production environments, it does demonstrate how automation, consistency, and threat-informed development practices can be applied to detection engineering workflows.
 
-- Build and validate detection rules in TOML
-- Automatically push validated alerts to Elastic
-- Generate metrics and ATT&CK Navigator layers
-- Enforce consistent rule structure and CI/CD quality gates
+With this setup, I can:
 
-This project uses **GitHub Actions** for continuous integration and deployment of detection content, built around the following core workflows:
+- Create and manage detection rules in TOML format
+- Validate rules for required fields and MITRE ATT&CK accuracy
+- Push updates directly into my Elastic Security instance
+- Generate metrics, detection timelines, and ATT&CK Navigator heatmaps
+- Experiment with CI/CD techniques in a security content context
+
+This project uses **GitHub Actions** to simulate a full detection engineering pipeline, modeled after what a small team or solo practitioner might use in a real-world environment.
 
 ---
 
 ## GitHub Actions Workflow
 
-This repo uses GitHub Actions to automate:
+GitHub Actions power the automation for:
 
-- **Elastic Automation** – Push modified alerts directly into Elastic Security
-- **TOML Validation** – Validate against required fields and MITRE ATT&CK accuracy
-- **Metrics Automation** – Generate CSVs and MITRE Navigator JSONs from TOML
+- **Elastic Automation** – Push updated or new alerts to an Elastic Security instance
+- **TOML Validation** – Enforce rule consistency and verify MITRE mappings
+- **Metrics Generation** – Export CSVs, Markdown summaries, and ATT&CK Navigator layers from detection content
 
-See the diagram above for full flow.
+See the diagram below for a visual walkthrough of the full pipeline.
+
+![GitHub Actions Flow](./assets/github_actions_flow.png)
 
 ---
 
